@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "steoates.autoimport",
+    "usernamehw.errorlens",
+    "eamodio.gitlens",
+    "wix.vscode-import-cost",
+    "visualstudioexptteam.vscodeintellicode",
+    "visualstudioexptteam.intellicode-api-usage-examples",
+    "mariusalchimavicius.json-to-ts",
+    "docsmsft.docs-yaml",
+    "bierner.markdown-yaml-preamble",
+    "rvest.vs-code-prettier-eslint",
+    "redhat.vscode-yaml"
+  ]
+}

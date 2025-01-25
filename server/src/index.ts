@@ -29,8 +29,6 @@ new Routes(app);
 io.on("connection", (socket) => {
   console.log("A user connected:", socket.id);
 
-  const headers = socket.handshake.headers;
-
   const accesstoken = socket.handshake.query.accesstoken as string;
   socket.on("click", async ({ count }) => {
     const user = verifyJwtToken(accesstoken) as JwtPayload;

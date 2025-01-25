@@ -1,10 +1,10 @@
-import { CircularProgress } from '@mui/material';
-import { useQuery } from '@tanstack/react-query';
-import { useNavigate } from 'react-router-dom';
-import { fetchPlayers } from '../../api/get-players';
-import DataTable from '../../components/table';
-import axiosInstance from '../../helpers/requestor';
-import AdminLayout from './layout';
+import { CircularProgress } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
+import { fetchPlayers } from "../../api/get-players";
+import DataTable from "../../components/table";
+import axiosInstance from "../../helpers/requestor";
+import AdminLayout from "./layout";
 
 const AdminPanel = () => {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const AdminPanel = () => {
     isLoading,
     refetch,
   } = useQuery({
-    queryKey: ['players'],
+    queryKey: ["players"],
     queryFn: fetchPlayers,
   });
 
@@ -23,20 +23,20 @@ const AdminPanel = () => {
   };
 
   const handleDeleteUser = async (userId: string) => {
-    await axiosInstance.delete(`http://localhost:3000/user/${userId}`);
+    await axiosInstance.delete(`${import.meta.env.API_URL}/user/${userId}`);
     refetch();
   };
 
   return (
     <AdminLayout>
       {isLoading ? (
-        <CircularProgress size={'25px'} sx={{ marginInline: 'auto' }} />
+        <CircularProgress size={"25px"} sx={{ marginInline: "auto" }} />
       ) : (
         <DataTable
           columns={Object.keys(players?.[0] || {}).filter(
             (column) =>
-              column.toLowerCase() !== '_id' &&
-              column.toLowerCase() !== 'userid'
+              column.toLowerCase() !== "_id" &&
+              column.toLowerCase() !== "userid"
           )}
           rows={players}
           onEditUser={handleEditUser}

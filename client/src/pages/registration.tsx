@@ -90,7 +90,7 @@ const Registration = () => {
 
   const addUser = async (data: IUserInput) => {
     try {
-      await axiosInstance.post(`${import.meta.env.API_URL}/user`, data);
+      await axiosInstance.post(`${import.meta.env.VITE_API_URL}/user`, data);
       toast("User Added Successfully!..", {
         position: "top-right",
         autoClose: 5000,
@@ -117,7 +117,7 @@ const Registration = () => {
   const editUser = async (data: IUserInput) => {
     try {
       await axiosInstance.patch(
-        `${import.meta.env.API_URL}/user/${userId}`,
+        `${import.meta.env.VITE_API_URL}/user/${userId}`,
         data
       );
       toast("User Edited Successfully!..", {
@@ -149,7 +149,7 @@ const Registration = () => {
   const fetchUserById = async () => {
     try {
       const { data } = await axiosInstance.get(
-        `${import.meta.env.API_URL}/user/${userId}`
+        `${import.meta.env.VITE_API_URL}/user/${userId}`
       );
       setValue("name", data?.data.name);
       setValue("email", data?.data.email);

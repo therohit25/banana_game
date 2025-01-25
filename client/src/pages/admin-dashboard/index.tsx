@@ -23,7 +23,9 @@ const AdminPanel = () => {
   };
 
   const handleDeleteUser = async (userId: string) => {
-    await axiosInstance.delete(`${import.meta.env.API_URL}/user/${userId}`);
+    await axiosInstance.delete(
+      `${import.meta.env.VITE_API_URL}/user/${userId}`
+    );
     refetch();
   };
 

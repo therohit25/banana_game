@@ -70,8 +70,9 @@ const Login = () => {
   const dispatch = useDispatch();
   const onSubmit = async (data: IUserInput) => {
     try {
+      console.log(`${import.meta.env.VITE_API_URL}`);
       const { data: userData } = await axiosInstance.post(
-        `${import.meta.env.API_URL}/user/login`,
+        `${import.meta.env.VITE_API_URL}/user/login`,
         data
       );
       Cookies.set("accesstoken", userData.data.token, {

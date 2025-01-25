@@ -18,6 +18,7 @@ const io = new SocketServer(server, {
     origin: process.env.FRONTEND_URL,
     methods: ["GET", "POST"],
   },
+  transports: ["websocket"],
 });
 
 app.use(cors());

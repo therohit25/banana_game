@@ -15,7 +15,7 @@ const server = new HttpServer(app);
 
 const io = new SocketServer(server, {
   cors: {
-    origin: "*",
+    origin: process.env.FRONTEND_URL,
     methods: ["GET", "POST"],
   },
 });

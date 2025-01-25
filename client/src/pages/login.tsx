@@ -149,6 +149,14 @@ const Login = () => {
             Login
           </StyledButton>
         </StyledForm>
+        <Stack>
+          <small>
+            <strong>Email&nbsp;</strong>:admin@1test.com
+          </small>
+          <small>
+            <strong>Password&nbsp;</strong>:testpassword123
+          </small>
+        </Stack>
       </Stack>
 
       <ToastContainer position="bottom-right" autoClose={5000} />

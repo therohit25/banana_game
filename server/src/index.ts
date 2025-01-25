@@ -31,7 +31,7 @@ io.on("connection", (socket) => {
 
   const headers = socket.handshake.headers;
 
-  const accesstoken = (headers["accesstoken"] || "") as unknown as string;
+  const accesstoken = socket.handshake.query.accesstoken as string;
   socket.on("click", async ({ count }) => {
     const user = verifyJwtToken(accesstoken) as JwtPayload;
 
